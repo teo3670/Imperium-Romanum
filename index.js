@@ -251,6 +251,18 @@ type: "0",
  bankspace: "150000",
   afk:"false",
   afkr:"",
+  animals:"0",
+  travel:"",
+  architect:"",
+  factory:"",
+  doctor:"",
+  lawyer:"",
+  engineer:"",
+  musician:"",
+  stockbreeder:"",
+  fisherman:"",
+  hunter:"",
+  
 
 })
 
@@ -381,6 +393,17 @@ code:`$setGlobalUserVar[cash;$sum[$getGlobalUserVar[cash;$authorID];150000]]
   $globalCooldown[1h;{newEmbed: {description:**⛔ Please wait __%time%__ before you can claim another architect income!**}{color:303136}}]`
 })
 
+
+bot.command({ 
+  name:"hunter",
+code:`$setGlobalUserVar[cash;$sum[$getGlobalUserVar[cash;$authorID];100000]]
+$setGlobalUserVar[animals;$sum[$getGlobalUserVar[animals];$random[1;3]]]
+  $description[1;You collected your income as a ** <@&964180148851195944>** __100000<:cur:951155301854351461>__ *and you caught* $random[1;3] 🦌**animals**]
+  $onlyForRoles[964180148851195944;{newEmbed: {description::x: You have to take hunter role!}{color:303136}}]
+  $color[1;303136]
+  $globalCooldown[10m;{newEmbed: {description:**⛔ Please wait __%time%__ before you can claim another hunter income!**}{color:303136}}]`
+})
+
 bot.command({ 
   name:"engineer",
 code:`$setGlobalUserVar[cash;$sum[$getGlobalUserVar[cash;$authorID];30000]]
@@ -431,6 +454,14 @@ bot.command({
   code:`$setGlobalUserVar[fish;0]
 $setGlobalUserVar[cash;$sum[$getGlobalUserVar[cash];$multi[$getGlobalUserVar[fish];$random[1;500]]]
 $description[1;__You sold $getGlobalUserVar[fish]🐟 for $multi[$getGlobalUserVar[fish];$random[1;500]]<:cur:951155301854351461>__]
+$color[1;303136]`
+})
+
+bot.command({
+  name:"sell-animals",
+  code:`$setGlobalUserVar[animals;0]
+$setGlobalUserVar[cash;$sum[$getGlobalUserVar[cash];$multi[$getGlobalUserVar[animals];$random[1;5000]]]
+$description[1;__You sold $getGlobalUserVar[animals]🦌 for $multi[$getGlobalUserVar[animals];$random[1;5000]]<:cur:951155301854351461>__]
 $color[1;303136]`
 })
 
@@ -498,3 +529,4 @@ const port = 3000;
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+

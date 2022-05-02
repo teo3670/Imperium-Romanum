@@ -2,7 +2,7 @@ module.exports = [{
 name:"jobs", 
   if:"v4", 
 code:`$title[1;Jobs Info]
-$addSelectMenu[1;bruh;Salaries Info;1;1;no;Lawyer:30000 per hour!:ono:no:⚖️;Doctor:8000 per hour!:wtw:no:⛑️;Stockbreeder:3000 per 3 hours!:ono1:no:🐐;Merchant:50000 per 30 minutes!:ono2:no:🔔;Fisherman:3000 per 10 minutes!:ono3:no:🎣;Industry Owner:300000 per day!:ono4:no:🏭;Architect:150000 per hour!:ono5:no:🏰;Engineer:30000 per 4 hours!:ono6:no:⚙️;Musician:3000 per 2 hours!:ono7:no:🎵]
+$addSelectMenu[1;bruh;Salaries Info;1;1;no;Lawyer:30000 per hour!:ono:no:⚖️;Doctor:8000 per hour!:wtw:no:⛑️;Stockbreeder:3000 per 3 hours!:ono1:no:🐐;Merchant:50000 per 30 minutes!:ono2:no:🔔;Fisherman:3000 per 10 minutes!:ono3:no:🎣;Industry Owner:300000 per day!:ono4:no:🏭;Architect:150000 per hour!:ono5:no:🏰;Engineer:30000 per 4 hours!:ono6:no:⚙️;Musician:3000 per 2 hours!:ono7:no:🎵;Hunter:100000 per hour!:ono8:no:🏹]
 $color[1;303136]`
 },{
   name:"bruh", 
@@ -58,4 +58,10 @@ $onlyif[$interactionData[values[0]]==ono6;]`
   prototype:"selectMenu", 
   code:`$interactionReply[;{newEmbed:{title:Salary Income!}{description:**You can use \`$getServerVar[prefix]musician\` command to collect your income!**}{color:303136}}
 $onlyif[$interactionData[values[0]]==ono7;]`
+},{
+  name:"bruh", 
+  type:"interaction", 
+  prototype:"selectMenu", 
+  code:`$interactionReply[;{newEmbed:{title:Salary Income!}{description:**You can use \`$getServerVar[prefix]hunter\` command to collect your income!**}{color:303136}}
+$onlyif[$interactionData[values[0]]==ono8;]`
 }]

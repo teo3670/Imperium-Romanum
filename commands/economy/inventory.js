@@ -12,6 +12,8 @@ $addField[1;Boat :ship:;
   \`$getGlobalUserVar[boat]\`]
 $addField[1;Fish :fish:;
   \`$getGlobalUserVar[fish]\`]
+$addField[1;Animals :deer:;
+  \`$getGlobalUserVar[animals]\`]
 $addField[1;Iphone 1 :mobile_phone:;
   \`$getGlobalUserVar[iphone1]\`]
 $addField[1;Iphone 2 :mobile_phone:;
